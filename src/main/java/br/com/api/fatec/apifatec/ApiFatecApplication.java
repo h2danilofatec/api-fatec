@@ -29,6 +29,7 @@ public class ApiFatecApplication {
 	
 	@RequestMapping("/numero/{num}")
 	Integer numero2(@PathVariable Integer num) {
+		//retorna valor recebido pelo parametro
 		return num;
 	}
 	
