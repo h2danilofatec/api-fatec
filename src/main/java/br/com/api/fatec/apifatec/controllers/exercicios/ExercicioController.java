@@ -1,38 +1,17 @@
-package br.com.api.fatec.apifatec;
+package br.com.api.fatec.apifatec.controllers.exercicios;
 
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.method.annotation.MethodArgumentTypeMismatchException;
-
-import jakarta.websocket.server.PathParam;
 
 @RestController
-@SpringBootApplication
-public class ApiFatecApplication {
+@RequestMapping("/api/exercicios")
+public class ExercicioController {
 	
-	@RequestMapping("/")
+	@RequestMapping("/teste")
 	String home() {
 		return "hello world";
-	}
-	
-	@RequestMapping("/hello")
-	String home2() {
-		return "hello world 2";
-	}
-	
-	@RequestMapping("/numero")
-	Integer numero() {
-		return 2;
-	}
-	
-	@RequestMapping("/numero/{num}")
-	Integer numero2(@PathVariable Integer num) {
-		return num;
 	}
 	
 	@RequestMapping(value = "/idade-com-tipo-string/{paramIdade}", method = RequestMethod.GET)
@@ -59,11 +38,6 @@ public class ApiFatecApplication {
 			return "idade invalida";
 		}
 	}
-	
-	
-	
-	
-	
 	
 	
 	
@@ -96,9 +70,5 @@ public class ApiFatecApplication {
     public String handleTypeMismatchException(MethodArgumentTypeMismatchException e) {
         return "idade invalida";
     }
-    
-	public static void main(String[] args) {
-		SpringApplication.run(ApiFatecApplication.class, args);
-	}
-
+	
 }
