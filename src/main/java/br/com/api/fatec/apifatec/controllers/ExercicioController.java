@@ -1,17 +1,15 @@
-package br.com.api.fatec.apifatec.controllers.exercicios;
+package br.com.api.fatec.apifatec.controllers;
 
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.method.annotation.MethodArgumentTypeMismatchException;
+
 
 @RestController
 @RequestMapping("/api/exercicios")
 public class ExercicioController {
-	
-	@RequestMapping("/teste")
+	@GetMapping("/teste")
 	String home() {
-		return "hello world";
+		return "hello world-";
 	}
 	
 	@RequestMapping(value = "/idade-com-tipo-string/{paramIdade}", method = RequestMethod.GET)
@@ -22,10 +20,9 @@ public class ExercicioController {
 			if (idade < 0) {
 				throw new NumberFormatException();
 			}
-			
 
             if (idade < 12) {
-                return "Crianca";
+                return "Criança";
             } else if (idade <= 18) {
                 return "Adolescente";
             } else if (idade <= 60) {
@@ -38,9 +35,6 @@ public class ExercicioController {
 			return "idade invalida";
 		}
 	}
-	
-	
-	
 	
 	@RequestMapping(value = "/idade-com-parametro-tipo-integer/{paramIdade}", method = RequestMethod.GET)
     String getIdadeComParametroTipoInteger(@PathVariable Integer paramIdade) {
@@ -70,5 +64,4 @@ public class ExercicioController {
     public String handleTypeMismatchException(MethodArgumentTypeMismatchException e) {
         return "idade invalida";
     }
-	
 }
