@@ -1,17 +1,16 @@
-package br.com.api.fatec.apifatec.domain.cliente.dao;
+package br.com.api.fatec.apifatec.domain.cliente;
 
-import br.com.api.fatec.apifatec.domain.cliente.dto.ClienteDTO;
 import br.com.api.fatec.apifatec.entities.Cliente;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class ClienteDAO {
+public class ClienteMapper {
     public static Cliente toEntity(ClienteDTO dto) {
         Cliente cliente = new Cliente();
         cliente.setId(dto.getId());
         cliente.setNome(dto.getNome());
-        cliente.setSobrenome(dto.getSobrenome());
+        cliente.setRazaoSocial(dto.getRazaoSocial());
         cliente.setEndereco(dto.getEndereco());
         cliente.setEmail(dto.getEmail());
         return cliente;
@@ -21,13 +20,13 @@ public class ClienteDAO {
         ClienteDTO dto = new ClienteDTO();
         dto.setId(cliente.getId());
         dto.setNome(cliente.getNome());
-        dto.setSobrenome(cliente.getSobrenome());
+        dto.setRazaoSocial(cliente.getRazaoSocial());
         dto.setEndereco(cliente.getEndereco());
         dto.setEmail(cliente.getEmail());
         return dto;
     }
 
     public static List<ClienteDTO> toDTOList(List<Cliente> clientes) {
-        return clientes.stream().map(ClienteDAO::toDTO).collect(Collectors.toList());
+        return clientes.stream().map(ClienteMapper::toDTO).collect(Collectors.toList());
     }
 }
