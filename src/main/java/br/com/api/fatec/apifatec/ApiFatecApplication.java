@@ -21,6 +21,14 @@ public class ApiFatecApplication {
 			cliente.setRazaoSocial("Danilo");
 			
 			clienteRepository.save(cliente);
+			
+			Cliente cliente2 = new Cliente();
+			cliente2.setNome("Arthur");
+			cliente2.setEmail("h2danilosfatec@hotmail.com");
+			cliente2.setEndereco("Rua xxx, 126");
+			cliente2.setRazaoSocial("Arthur");
+			
+			clienteRepository.save(cliente2);
 		};
 	}
 	
