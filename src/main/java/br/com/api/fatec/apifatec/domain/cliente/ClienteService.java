@@ -24,6 +24,12 @@ public class ClienteService {
 	}
 
 	public void deletarCliente(Long id) {
+		Cliente cliente = encontrarClientePorId(id);
+		
+		if(cliente == null)
+			throw new IllegalArgumentException("Cliente nao existe");
+		
+		
 		clienteRepository.deleteById(id);
 	}
 	
@@ -40,5 +46,13 @@ public class ClienteService {
 			clienteCadastradoCliente.setEndereco(cliente.getEndereco());
 			return clienteRepository.save(clienteCadastradoCliente);
 		}
+	}
+
+	public List<Cliente> buscarPorNome(String nome) {
+		//Forma 1
+		return clienteRepository.findByNomeContainingIgnoreCase(nome);
+
+		//Forma 2
+		//return clienteRepository.findByNome(nome);
 	}
 }

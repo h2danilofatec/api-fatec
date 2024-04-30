@@ -32,6 +32,12 @@ public class ClienteController {
 		return new ResponseEntity<>(clientes, HttpStatus.OK);
 	}
 	
+	@GetMapping("/buscar-por-nome/{nome}")
+	public ResponseEntity<List<Cliente>> buscarPorNome(@PathVariable String nome) {
+		List<Cliente> clientes = clienteService.buscarPorNome(nome);
+		return new ResponseEntity<>(clientes, HttpStatus.OK);
+	}
+	
 	@GetMapping("/{id}")
 	public ResponseEntity<Cliente> encontrarClientePorId(@PathVariable Long id) {
 		Cliente cliente = clienteService.encontrarClientePorId(id);
