@@ -1,110 +1,110 @@
-# API-FATEC - API de Pedidos de Venda
+<h1 align="center"> API de Pedidos de Venda </h1>
 
 Este projeto consiste em uma API REST desenvolvida com Spring Boot, projetada para gerenciar pedidos de venda. O principal objetivo é fornecer material didático de alta qualidade para estudantes da FATEC, facilitando o aprendizado prático de conceitos de desenvolvimento de API e back-end com Java.
 
-## Funcionalidades
+## Funcionalidades:
 
 ## CLIENTES
 
-## Listar Todos os Clientes
+- **Listar Todos os Clientes**
 
-- **Endpoint:** `GET /api/clientes/v1`
-- **Descrição:** Retorna uma lista de todos os clientes cadastrados no sistema.
-- **Resposta:** Uma lista de objetos `Cliente`, com status HTTP 200 OK.
+    - **Endpoint:** `GET /api/clientes/v1`
+    - **Descrição:** Retorna uma lista de todos os clientes cadastrados no sistema.
+    - **Resposta:** Uma lista de objetos `Cliente`, com status HTTP 200 OK.
 
-## Buscar Clientes por Nome
+- **Buscar Clientes por Nome**
 
-- **Endpoint:** `GET /api/clientes/v1/buscar-por-nome/{nome}`
-- **Descrição:** Permite a busca de clientes pelo nome. Retorna todos os clientes cujos nomes contêm a string fornecida.
-- **Resposta:** Uma lista de objetos `Cliente` que correspondem ao critério de busca, com status HTTP 200 OK.
+    - **Endpoint:** `GET /api/clientes/v1/buscar-por-nome/{nome}`
+    - **Descrição:** Permite a busca de clientes pelo nome. Retorna todos os clientes cujos nomes contêm a string fornecida.
+    - **Resposta:** Uma lista de objetos `Cliente` que correspondem ao critério de busca, com status HTTP 200 OK.
 
-## Encontrar Cliente por ID
+- **Encontrar Cliente por ID**
 
-- **Endpoint:** `GET /api/clientes/v1/{id}`
-- **Descrição:** Retorna os detalhes de um cliente específico baseado em seu ID.
-- **Resposta:** Um objeto `Cliente` se encontrado, com status HTTP 200 OK, ou status HTTP 404 Not Found se nenhum cliente for encontrado.
+    - **Endpoint:** `GET /api/clientes/v1/{id}`
+    - **Descrição:** Retorna os detalhes de um cliente específico baseado em seu ID.
+    - **Resposta:** Um objeto `Cliente` se encontrado, com status HTTP 200 OK, ou status HTTP 404 Not Found se nenhum cliente for encontrado.
 
-## Salvar um Novo Cliente
+- **Salvar um Novo Cliente**
 
-- **Endpoint:** `POST /api/clientes/v1`
-- **Descrição:** Permite a criação de um novo cliente. Os dados do cliente devem ser enviados como um objeto JSON no corpo da requisição.
-- **Resposta:** O objeto `Cliente` criado, com status HTTP 201 CREATED.
+    - **Endpoint:** `POST /api/clientes/v1`
+    - **Descrição:** Permite a criação de um novo cliente. Os dados do cliente devem ser enviados como um objeto JSON no corpo da requisição.
+    - **Resposta:** O objeto `Cliente` criado, com status HTTP 201 CREATED.
 
-## Deletar um Cliente
+- **Deletar um Cliente**
 
-- **Endpoint:** `DELETE /api/clientes/v1/{id}`
-- **Descrição:** Remove um cliente do sistema baseado em seu ID.
-- **Resposta:** Status HTTP 204 No Content após a exclusão bem-sucedida.
+    - **Endpoint:** `DELETE /api/clientes/v1/{id}`
+    - **Descrição:** Remove um cliente do sistema baseado em seu ID.
+    - **Resposta:** Status HTTP 204 No Content após a exclusão bem-sucedida.
 
-## Atualizar um Cliente Existente
+- **Atualizar um Cliente Existente**
 
-- **Endpoint:** `PUT /api/clientes/v1/{id}`
-- **Descrição:** Atualiza os dados de um cliente existente. O ID do cliente e os novos dados são fornecidos na URL e no corpo da requisição, respectivamente.
-- **Resposta:** O objeto `Cliente` atualizado, com status HTTP 200 OK.
+    - **Endpoint:** `PUT /api/clientes/v1/{id}`
+    - **Descrição:** Atualiza os dados de um cliente existente. O ID do cliente e os novos dados são fornecidos na URL e no corpo da requisição, respectivamente.
+    - **Resposta:** O objeto `Cliente` atualizado, com status HTTP 200 OK.
 
 ## PRODUTOS
 
-## Listar Todos os Produtos
+- **Listar Todos os Produtos**
 
-- **Endpoint:** `GET /api/produtos/v1`
-- **Descrição:** Retorna uma lista de todos os produtos disponíveis no sistema.
-- **Resposta:** Uma lista de objetos `Produto`, com status HTTP 200 OK.
+    - **Endpoint:** `GET /api/produtos/v1`
+    - **Descrição:** Retorna uma lista de todos os produtos disponíveis no sistema.
+    - **Resposta:** Uma lista de objetos `Produto`, com status HTTP 200 OK.
 
-## Encontrar Produto por ID
+- **Encontrar Produto por ID**
 
-- **Endpoint:** `GET /api/produtos/v1/{id}`
-- **Descrição:** Retorna os detalhes de um produto específico baseado em seu ID.
-- **Resposta:** Um objeto `Produto` se encontrado, com status HTTP 200 OK, ou status HTTP 404 Not Found se nenhum produto for encontrado.
+    - **Endpoint:** `GET /api/produtos/v1/{id}`
+    - **Descrição:** Retorna os detalhes de um produto específico baseado em seu ID.
+    - **Resposta:** Um objeto `Produto` se encontrado, com status HTTP 200 OK, ou status HTTP 404 Not Found se nenhum produto for encontrado.
 
-## Salvar um Novo Produto
+- **Salvar um Novo Produto**
 
-- **Endpoint:** `POST /api/produtos/v1`
-- **Descrição:** Permite a criação de um novo produto. Os dados do produto devem ser enviados como um objeto JSON no corpo da requisição.
-- **Resposta:** O objeto `Produto` criado, com status HTTP 201 CREATED.
+    - **Endpoint:** `POST /api/produtos/v1`
+    - **Descrição:** Permite a criação de um novo produto. Os dados do produto devem ser enviados como um objeto JSON no corpo da requisição.
+    - **Resposta:** O objeto `Produto` criado, com status HTTP 201 CREATED.
 
-## Deletar um Produto
+- **Deletar um Produto**
 
-- **Endpoint:** `DELETE /api/produtos/v1/{id}`
-- **Descrição:** Remove um produto do sistema baseado em seu ID.
-- **Resposta:** Status HTTP 204 No Content após a exclusão bem-sucedida.
+    - **Endpoint:** `DELETE /api/produtos/v1/{id}`
+    - **Descrição:** Remove um produto do sistema baseado em seu ID.
+    - **Resposta:** Status HTTP 204 No Content após a exclusão bem-sucedida.
 
-## Atualizar um Produto Existente
+- **Atualizar um Produto Existente**
 
-- **Endpoint:** `PUT /api/produtos/v1/{id}`
-- **Descrição:** Atualiza os dados de um produto existente. O ID do produto e os novos dados são fornecidos na URL e no corpo da requisição, respectivamente.
-- **Resposta:** O objeto `Produto` atualizado, com status HTTP 200 OK.
+    - **Endpoint:** `PUT /api/produtos/v1/{id}`
+    - **Descrição:** Atualiza os dados de um produto existente. O ID do produto e os novos dados são fornecidos na URL e no corpo da requisição, respectivamente.
+    - **Resposta:** O objeto `Produto` atualizado, com status HTTP 200 OK.
 
 ## PEDIDOS DE VENDA
 
-## Adicionar um Novo Pedido
+- **Adicionar um Novo Pedido**
 
-- **Endpoint:** `POST /api/pedido-venda/v1`
-- **Descrição:** Permite a criação de um novo pedido de venda. Os detalhes do pedido devem ser enviados como um objeto JSON no corpo da requisição.
-- **Resposta:** O objeto `PedidoVenda` criado, com status HTTP 200 OK.
+    - **Endpoint:** `POST /api/pedido-venda/v1`
+    - **Descrição:** Permite a criação de um novo pedido de venda. Os detalhes do pedido devem ser enviados como um objeto JSON no corpo da requisição.
+    - **Resposta:** O objeto `PedidoVenda` criado, com status HTTP 200 OK.
 
-## Buscar um Pedido pelo ID
+- **Buscar um Pedido pelo ID**
 
-- **Endpoint:** `GET /api/pedido-venda/v1/{id}`
-- **Descrição:** Retorna os detalhes de um pedido específico baseado em seu ID.
-- **Resposta:** Um objeto `PedidoVenda` se encontrado, com status HTTP 200 OK, ou status HTTP 404 Not Found se nenhum pedido for encontrado.
+    - **Endpoint:** `GET /api/pedido-venda/v1/{id}`
+    - **Descrição:** Retorna os detalhes de um pedido específico baseado em seu ID.
+    - **Resposta:** Um objeto `PedidoVenda` se encontrado, com status HTTP 200 OK, ou status HTTP 404 Not Found se nenhum pedido for encontrado.
 
-## Listar Todos os Pedidos
+- **Listar Todos os Pedidos**
 
-- **Endpoint:** `GET /api/pedido-venda/v1`
-- **Descrição:** Retorna uma lista de todos os pedidos de venda registrados no sistema.
-- **Resposta:** Uma lista de objetos `PedidoVenda`.
+    - **Endpoint:** `GET /api/pedido-venda/v1`
+    - **Descrição:** Retorna uma lista de todos os pedidos de venda registrados no sistema.
+    - **Resposta:** Uma lista de objetos `PedidoVenda`.
 
-## Atualizar os Dados de um Pedido
+- **Atualizar os Dados de um Pedido**
 
-- **Endpoint:** `PUT /api/pedido-venda/v1/{id}`
-- **Descrição:** Atualiza os dados de um pedido existente. O ID do pedido e os novos dados são fornecidos na URL e no corpo da requisição, respectivamente.
-- **Resposta:** O objeto `PedidoVenda` atualizado, com status HTTP 200 OK, ou status HTTP 404 Not Found se o pedido não for encontrado.
+    - **Endpoint:** `PUT /api/pedido-venda/v1/{id}`
+    - **Descrição:** Atualiza os dados de um pedido existente. O ID do pedido e os novos dados são fornecidos na URL e no corpo da requisição, respectivamente.
+    - **Resposta:** O objeto `PedidoVenda` atualizado, com status HTTP 200 OK, ou status HTTP 404 Not Found se o pedido não for encontrado.
 
-## Cancelar um Pedido
+- **Cancelar um Pedido**
 
-- **Endpoint:** `PUT /api/pedido-venda/v1/{id}/cancelar`
-- **Descrição:** Cancela um pedido de venda existente. O cancelamento é tratado por uma lógica específica que pode levar ao retorno de diferentes códigos de resposta com base no estado do pedido.
-- **Resposta:** O objeto `PedidoVenda` cancelado, com status HTTP 200 OK, status HTTP 400 Bad Request se o pedido não puder ser cancelado devido a um estado inválido, ou status HTTP 404 Not Found se o pedido não for encontrado.
+    - **Endpoint:** `PUT /api/pedido-venda/v1/{id}/cancelar`
+    - **Descrição:** Cancela um pedido de venda existente. O cancelamento é tratado por uma lógica específica que pode levar ao retorno de diferentes códigos de resposta com base no estado do pedido.
+    - **Resposta:** O objeto `PedidoVenda` cancelado, com status HTTP 200 OK, status HTTP 400 Bad Request se o pedido não puder ser cancelado devido a um estado inválido, ou status HTTP 404 Not Found se o pedido não for encontrado.
 
 ## Tecnologias Utilizadas
 
