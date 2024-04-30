@@ -138,9 +138,7 @@ Copy code
 4. **Execute a aplicação:**
 mvn spring-boot:run
 
-markdown
-Copy code
-A aplicação estará acessível em `http://localhost:8090`.
+#A aplicação estará acessível em `http://localhost:8090`.
 
 
 ## Contribuições
