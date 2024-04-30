@@ -20,15 +20,13 @@ public class PedidoVendaService {
         if (pedidoVenda.getItems().isEmpty())
             throw new IllegalStateException("Favor informar itens do Pedido.");
 
+        PedidoVenda pedidoCriar = new PedidoVenda();
+
         pedidoVenda.getItems().forEach(item -> {
             item.setValorUnitario(item.getProduto().getPreco());
             item.setValorTotal(item.getValorUnitario().multiply(BigDecimal.valueOf(item.getQuantidade())));
             pedidoVenda.addItem(item);
         });
-
-        pedidoVenda.setTotal(pedidoVenda.getItems().stream()
-                .map(PedidoVendaItem::getValorTotal)
-                .reduce(BigDecimal.ZERO, BigDecimal::add));
 
         return pedidoVendaRepository.save(pedidoVenda);
     }
