@@ -106,7 +106,7 @@ Este projeto consiste em uma API REST desenvolvida com Spring Boot, projetada pa
     - **Descrição:** Cancela um pedido de venda existente. O cancelamento é tratado por uma lógica específica que pode levar ao retorno de diferentes códigos de resposta com base no estado do pedido.
     - **Resposta:** O objeto `PedidoVenda` cancelado, com status HTTP 200 OK, status HTTP 400 Bad Request se o pedido não puder ser cancelado devido a um estado inválido, ou status HTTP 404 Not Found se o pedido não for encontrado.
 
-## Tecnologias Utilizadas
+## 🛠 Tecnologias Utilizadas
 
 - **Java 17:** Linguagem de programação.
 - **Spring Boot 3.2.3:** Framework para desenvolvimento de aplicações Spring.
@@ -118,29 +118,22 @@ Este projeto consiste em uma API REST desenvolvida com Spring Boot, projetada pa
 - **Spring Boot Devtools:** Oferece recursos que aumentam a produtividade durante o desenvolvimento.
 - **Validation API:** Permite a validação de dados de entrada para garantir a integridade das operações.
 
-## Instalação e Execução
+## 🎲 Instalação e Execução
 
 1. **Clone o repositório:**
-git clone https://github.com/h2danilofatec/api-fatec.git
+$ git clone https://github.com/h2danilofatec/api-fatec.git
 
-markdown
-Copy code
 2. **Navegue até o diretório do projeto:**
-cd api-fatec
+$ cd api-fatec
 
-markdown
-Copy code
 3. **Instale as dependências:**
-mvn install
+$ mvn install
 
-markdown
-Copy code
 4. **Execute a aplicação:**
-mvn spring-boot:run
+$ mvn spring-boot:run
 
-markdown
-Copy code
-A aplicação estará acessível em `http://localhost:8090`.
+
+# A aplicação estará acessível em `http://localhost:8090`.
 
 
 ## Contribuições
