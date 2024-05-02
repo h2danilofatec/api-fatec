@@ -3,8 +3,6 @@ package br.com.api.fatec.apifatec.controllers;
 import java.util.List;
 
 import br.com.api.fatec.apifatec.domain.cliente.ClienteService;
-import br.com.api.fatec.apifatec.domain.cliente.ClienteMapper;
-import br.com.api.fatec.apifatec.domain.cliente.ClienteDTO;
 import br.com.api.fatec.apifatec.entities.Cliente;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

@@ -1,4 +1,4 @@
-package br.com.api.fatec.apifatec.domain.cliente;
+package br.com.api.fatec.apifatec.domain.cliente.dtos;
 
 public class ClienteDTO {
     private Long id;

@@ -3,8 +3,8 @@ package br.com.api.fatec.apifatec.controllers;
 import java.util.List;
 
 import br.com.api.fatec.apifatec.domain.cliente.ClienteService;
-import br.com.api.fatec.apifatec.domain.cliente.ClienteMapper;
-import br.com.api.fatec.apifatec.domain.cliente.ClienteDTO;
+import br.com.api.fatec.apifatec.domain.cliente.dtos.ClienteDTO;
+import br.com.api.fatec.apifatec.domain.cliente.mapper.ClienteMapperV2;
 import br.com.api.fatec.apifatec.entities.Cliente;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -26,21 +26,21 @@ public class ClienteControllerV2 {
 
 	@GetMapping
 	public ResponseEntity<List<ClienteDTO>> listarClientes() {
-		List<ClienteDTO> clientes = ClienteMapper.toDTOList(clienteService.listarClientes());
+		List<ClienteDTO> clientes = ClienteMapperV2.toDTOList(clienteService.listarClientes());
 		return new ResponseEntity<>(clientes, HttpStatus.OK);
 	}
 
 	@GetMapping("/{id}")
 	public ResponseEntity<ClienteDTO> encontrarClientePorId(@PathVariable Long id) {
-		ClienteDTO cliente = ClienteMapper.toDTO(clienteService.encontrarClientePorId(id));
+		ClienteDTO cliente = ClienteMapperV2.toDTO(clienteService.encontrarClientePorId(id));
 		return cliente != null ? new ResponseEntity<>(cliente, HttpStatus.OK)
 				: new ResponseEntity<>(HttpStatus.NOT_FOUND);
 	}
 
 	@PostMapping
 	public ResponseEntity<ClienteDTO> salvarCliente(@RequestBody ClienteDTO clienteDTO) {
-		Cliente cliente = ClienteMapper.toEntity(clienteDTO);
-		ClienteDTO clienteSalvo = ClienteMapper.toDTO(clienteService.salvarCliente(cliente));
+		Cliente cliente = ClienteMapperV2.toEntity(clienteDTO);
+		ClienteDTO clienteSalvo = ClienteMapperV2.toDTO(clienteService.salvarCliente(cliente));
 		return new ResponseEntity<>(clienteSalvo, HttpStatus.CREATED);
 	}
 

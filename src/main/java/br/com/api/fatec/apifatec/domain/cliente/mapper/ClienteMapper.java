@@ -1,5 +1,6 @@
-package br.com.api.fatec.apifatec.domain.cliente;
+package br.com.api.fatec.apifatec.domain.cliente.mapper;
 
+import br.com.api.fatec.apifatec.domain.cliente.dtos.ClienteDTO;
 import br.com.api.fatec.apifatec.entities.Cliente;
 
 import java.util.List;
